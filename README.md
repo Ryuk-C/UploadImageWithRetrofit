@@ -1,4 +1,4 @@
-# UploadImageWithRetrofit
+# Upload Image With Retrofit
 
 In this project, I uploaded an image to the server using retrofit. Before the images are uploaded to the server, the image size(MB) is reduced and uploaded by compressing them.
 
