@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.screen.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvImage"
+            android:layout_width="@dimen/_175sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:elevation="@dimen/_5sdp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/notimage">
+
+                </ImageView>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpload"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_45sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:backgroundTint="@color/darkred"
+            android:text="Upload"
+            android:textAllCaps="false"
+            android:layout_below="@+id/cvImage"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/_15sdp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/pbLoading"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_below="@+id/btnUpload"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            android:layout_centerHorizontal="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/anim_loading"
+            app:lottie_speed="3.75" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
