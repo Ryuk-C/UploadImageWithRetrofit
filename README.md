@@ -24,9 +24,6 @@ The app uses [MVVM architecture][10] to have a unidirectional live of data, sepa
 
 ![Architecture](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
 
-App GIF
---------------
-
 
 LICENSE
 --------------
