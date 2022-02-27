@@ -181,8 +181,8 @@ class MainActivity : AppCompatActivity() {
 
                                     binding.pbLoading.visibility = View.GONE
 
-                                    val cikisSheet = SuccessBottomSheet
-                                    cikisSheet.newInstance("").show(this@MainActivity.supportFragmentManager, "ad")
+                                    val successSheet = SuccessBottomSheet
+                                    successSheet.newInstance("").show(this@MainActivity.supportFragmentManager, "ad")
 
                                 }
                             }
@@ -214,7 +214,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-    //You can know size of image this function.(200 KB, 750 Kb, 5 MB etc)
+    //You can know size of image this function.(200 KB, 750 Kb, 5 MB etc)(Optional)
     private fun getReadableFileSize(size: Long): String {
 
         if (size <= 0) {
@@ -226,18 +226,18 @@ class MainActivity : AppCompatActivity() {
         return DecimalFormat("#,##0.#").format(size / 1024.0.pow(digitGroups.toDouble())) + " " + units[digitGroups]
     }
 
-    //If the size of ımage is bigger than 10 MB(5, 15, 20 etc MB) You can block choose an image.
+    //If the size of ımage is bigger than 10 MB(5, 15, 20 etc MB) You can block choose an image.(Optional)
     private fun imageSize(file:File) : Boolean{
 
         val type = getReadableFileSize(file.length()).substringAfter(" ")
 
         val size = getReadableFileSize(file.length()).substringBefore(" ").replace(",",".")
 
-        when(type){
+        return when(type){
 
-            "B" -> {return false}
+            "B" -> {false}
 
-            "KB" -> {return true}
+            "KB" -> {true}
 
             "MB" -> {
 
@@ -245,26 +245,16 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            "GB" -> {return false}
+            "GB" -> {false}
 
-            "TB" -> {return false}
+            "TB" -> {false}
 
-        }
-
-        return if (type == "MB"){
-
-            size.toDouble() < 10.0
-
-
-        }else{
-
-            true
-
+            else -> {false}
         }
 
     }
 
-    //You can control type of image(Squre or Other)
+    //You can control type of image(Squre or Other)(Optional)
     private fun returnSquare(file: File): String {
 
         val options = BitmapFactory.Options()

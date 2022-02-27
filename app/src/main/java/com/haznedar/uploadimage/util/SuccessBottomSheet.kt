@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.haznedar.uploadimage.R
-import com.haznedar.uploadimage.databinding.BottomSheetExitBinding
+import com.haznedar.uploadimage.databinding.BottomSheetSuccessBinding
 
 class SuccessBottomSheet : BottomSheetDialogFragment() {
 
-    private lateinit var binding: BottomSheetExitBinding
+    private lateinit var binding: BottomSheetSuccessBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ class SuccessBottomSheet : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = BottomSheetExitBinding.inflate(inflater, container, false)
+        binding = BottomSheetSuccessBinding.inflate(inflater, container, false)
         return binding.root
 
 
