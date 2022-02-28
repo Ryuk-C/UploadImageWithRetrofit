@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.haznedar.uploadimage.data.model.ImageUploadModel
-import com.haznedar.uploadimage.data.repository.MainRepositoryInrerface
+import com.haznedar.uploadimage.data.repository.MainRepositoryInterface
 import com.haznedar.uploadimage.util.Resource
 import com.haznedar.uploadimage.util.ValueChecker
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
 
-    private val repo: MainRepositoryInrerface
+    private val repo: MainRepositoryInterface
 
 ) : ViewModel() {
 

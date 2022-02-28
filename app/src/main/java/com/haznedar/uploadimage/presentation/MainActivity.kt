@@ -122,6 +122,8 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this@MainActivity, e.localizedMessage, Toast.LENGTH_LONG).show()
 
+            binding.pbLoading.visibility = View.GONE
+
         }
 
     }
@@ -157,8 +159,7 @@ class MainActivity : AppCompatActivity() {
                 type,
                 "private key for web service",
                 "private code for web service",
-                filePart
-            )
+                filePart)
 
          uploadImageLiveData.observe(this@MainActivity) { data ->
 
@@ -203,7 +204,10 @@ class MainActivity : AppCompatActivity() {
                             Toast.makeText(this@MainActivity, it.data?.message ?: "Error", Toast.LENGTH_LONG).show()
 
                         }
+
                         Status.INTERNET -> {
+
+                            binding.pbLoading.visibility = View.GONE
 
                             Toast.makeText(this@MainActivity, "Internet Error!", Toast.LENGTH_LONG).show()
 
@@ -226,7 +230,7 @@ class MainActivity : AppCompatActivity() {
         return DecimalFormat("#,##0.#").format(size / 1024.0.pow(digitGroups.toDouble())) + " " + units[digitGroups]
     }
 
-    //If the size of ımage is bigger than 10 MB(5, 15, 20 etc MB) You can block choose an image.(Optional)
+    //If the size of ımage is bigger than 10 MB(5, 15, 20 MB etc) You can block choose an image.(Optional)
     private fun imageSize(file:File) : Boolean{
 
         val type = getReadableFileSize(file.length()).substringAfter(" ")
@@ -280,7 +284,7 @@ class MainActivity : AppCompatActivity() {
 
                     val file = data.data?.let { FileUtil.from(this, it) }
 
-                    //If the size of the image is bigger than 10 Mb then the code doesn't add it to the list.
+                    //If the size of the image is bigger than 10 Mb, the code doesn't add it to the imagePathList.
                     //If You don't wanna control the size of the image, You should use it without when structure.
                     when(imageSize(file!!)){
 

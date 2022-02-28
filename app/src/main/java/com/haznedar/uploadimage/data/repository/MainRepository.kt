@@ -13,7 +13,7 @@ class MainRepository @Inject constructor(
 
     private val api : APIService
 
-) : MainRepositoryInrerface {
+) : MainRepositoryInterface {
     override suspend fun uploadImage(
         id: String,
         rotation: String,

@@ -2,7 +2,7 @@ package com.haznedar.uploadimage.dependencyinjection
 
 import com.haznedar.uploadimage.data.remote.APIService
 import com.haznedar.uploadimage.data.repository.MainRepository
-import com.haznedar.uploadimage.data.repository.MainRepositoryInrerface
+import com.haznedar.uploadimage.data.repository.MainRepositoryInterface
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +17,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun mainRepository(api: APIService) = MainRepository(api) as MainRepositoryInrerface
+    fun mainRepository(api: APIService) = MainRepository(api) as MainRepositoryInterface
 
     @Singleton
     @Provides
